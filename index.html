@@ -3480,49 +3480,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-    <!-- Festive Deal marquee (mirrors the sticky cart deal copy) -->
+    <!-- iPhone 17 contest marquee (mirrors the sticky cart contest slide). Only bundle orders from the contest bundle page count -->
     <style>
-      /* Brand-teal colour-block band, gold reserved for the festive moment (Starbucks DESIGN.md rules, Happi Planet palette) */
-      .hp-deal-marquee { --hp-dm-bg: #084842; --hp-dm-accent: #f5b94a; --hp-dm-ink: #ffffff; display: block; overflow: hidden; background: var(--hp-dm-bg); color: var(--hp-dm-ink); text-decoration: none;
+      /* Brand-teal band; gold kept for the prize */
+      .hp-deal-marquee { --hp-dm-bg: #084842; --hp-dm-accent: #f5b94a; --hp-dm-ink: #ffffff; position: relative; display: block; overflow: hidden; background: var(--hp-dm-bg); color: var(--hp-dm-ink); text-decoration: none;
         border-bottom: 1px solid #063a35; }
       .hp-deal-marquee__track { display: flex; width: max-content; animation: hpDealMarquee 48s linear infinite; }
       .hp-deal-marquee:hover .hp-deal-marquee__track, .hp-deal-marquee:focus-visible .hp-deal-marquee__track { animation-play-state: paused; }
       .hp-deal-marquee:focus-visible { outline: 2px solid var(--hp-dm-accent); outline-offset: -2px; }
       .hp-deal-marquee__group { display: flex; flex: none; }
       .hp-deal-marquee__item { display: inline-flex; align-items: center; gap: 8px; padding: 10px 8px 10px 20px; white-space: nowrap; font-size: 12.5px; font-weight: 500; letter-spacing: -0.01em; line-height: 1.3; }
-      /* Diwali: a small lit diya between repeats, warm lights twinkling along the top edge */
-      .hp-deal-marquee { position: relative; }
-      .hp-deal-marquee::before, .hp-deal-marquee::after { content: ''; position: absolute; left: 0; right: 0; height: 3px; z-index: 1; pointer-events: none;
-        background: radial-gradient(circle at 50% 50%, #ffd27a 0 1.1px, transparent 1.5px) 0 0 / 16px 3px repeat-x; animation: hpDiyaTwinkle 2.4s ease-in-out infinite alternate; }
-      .hp-deal-marquee::before { top: 1px; }
-      .hp-deal-marquee::after { bottom: 1px; background-position: 8px 0; animation-delay: -1.2s; }
-      .hp-deal-marquee__diya { position: relative; flex: none; display: inline-block; width: 14px; height: 16px; margin-left: 12px; }
-      .hp-deal-marquee__diya svg { position: absolute; left: 0; bottom: 0; width: 14px; height: 7px; }
-      .hp-deal-marquee__diya i { position: absolute; left: 50%; bottom: 5px; width: 5px; height: 8px; margin-left: -2.5px; border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
-        background: radial-gradient(ellipse at 50% 75%, #fff4c2 0 25%, #ffc23d 50%, #f07c12 100%); box-shadow: 0 0 8px 3px rgba(255,176,46,0.55); transform-origin: 50% 100%; animation: hpDiyaFlicker 1.6s ease-in-out infinite; }
-      .hp-deal-marquee__item:nth-child(even) .hp-deal-marquee__diya i { animation-duration: 1.9s; animation-delay: -0.7s; }
-      @keyframes hpDiyaFlicker { 0%, 100% { transform: scale(1, 1) rotate(-2deg); } 30% { transform: scale(0.92, 1.08) rotate(3deg); } 60% { transform: scale(1.05, 0.94) rotate(-1deg); } }
-      @keyframes hpDiyaTwinkle { from { opacity: 0.3; } to { opacity: 0.9; } }
       .hp-deal-marquee__tag { color: var(--hp-dm-accent); font-weight: 600; letter-spacing: 0.01em; }
       .hp-deal-marquee__tag::after { content: '·'; margin-left: 8px; color: rgba(255,255,255,0.45); font-weight: 400; }
+      .hp-deal-marquee__sep { flex: none; width: 5px; height: 5px; margin-left: 12px; border-radius: 50%; background: var(--hp-dm-accent); opacity: 0.7; }
       @keyframes hpDealMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-      @media (min-width: 990px) { .hp-deal-marquee__item { padding: 11px 8px 11px 32px; font-size: 13.5px; } .hp-deal-marquee__diya { margin-left: 24px; } }
-      @media (prefers-reduced-motion: reduce) { .hp-deal-marquee__track, .hp-deal-marquee::before, .hp-deal-marquee::after, .hp-deal-marquee__diya i { animation: none; } }
+      @media (min-width: 990px) { .hp-deal-marquee__item { padding: 11px 8px 11px 32px; font-size: 13.5px; } .hp-deal-marquee__sep { margin-left: 24px; } }
+      @media (prefers-reduced-motion: reduce) { .hp-deal-marquee__track { animation: none; } }
     </style>
-    <!-- TODO: point to the live Buy 6 Trial Pack product URL -->
-    <a class="hp-deal-marquee" href="/products/festive-starter-kit" aria-label="Festive Deal: Buy 6 Trial Pack @ 499">
+    <a class="hp-deal-marquee" href="/pages/byob?view=contest-bundle" aria-label="Win an iPhone 17: order a bundle between 14 and 30 Nov. Build your bundle">
       <div class="hp-deal-marquee__track" aria-hidden="true">
         <div class="hp-deal-marquee__group">
-          <span class="hp-deal-marquee__item"><span class="hp-deal-marquee__tag">Festive Deal</span>Buy 6 Trial Pack @ 499<span class="hp-deal-marquee__diya"><svg viewBox="0 0 14 7"><path d="M0 0.5h14c0 3.6-3.1 6.5-7 6.5S0 4.1 0 0.5z" fill="#e0743a"/><path d="M2 0.5h10" stroke="#f5b94a" stroke-width="1"/></svg><i></i></span></span>
-          <span class="hp-deal-marquee__item"><span class="hp-deal-marquee__tag">Festive Deal</span>Buy 6 Trial Pack @ 499<span class="hp-deal-marquee__diya"><svg viewBox="0 0 14 7"><path d="M0 0.5h14c0 3.6-3.1 6.5-7 6.5S0 4.1 0 0.5z" fill="#e0743a"/><path d="M2 0.5h10" stroke="#f5b94a" stroke-width="1"/></svg><i></i></span></span>
-          <span class="hp-deal-marquee__item"><span class="hp-deal-marquee__tag">Festive Deal</span>Buy 6 Trial Pack @ 499<span class="hp-deal-marquee__diya"><svg viewBox="0 0 14 7"><path d="M0 0.5h14c0 3.6-3.1 6.5-7 6.5S0 4.1 0 0.5z" fill="#e0743a"/><path d="M2 0.5h10" stroke="#f5b94a" stroke-width="1"/></svg><i></i></span></span>
-          <span class="hp-deal-marquee__item"><span class="hp-deal-marquee__tag">Festive Deal</span>Buy 6 Trial Pack @ 499<span class="hp-deal-marquee__diya"><svg viewBox="0 0 14 7"><path d="M0 0.5h14c0 3.6-3.1 6.5-7 6.5S0 4.1 0 0.5z" fill="#e0743a"/><path d="M2 0.5h10" stroke="#f5b94a" stroke-width="1"/></svg><i></i></span></span>
+          <span class="hp-deal-marquee__item"><span class="hp-deal-marquee__tag">Win an iPhone 17</span>Order a bundle, 14&#8209;30&nbsp;Nov<span class="hp-deal-marquee__sep"></span></span>
+          <span class="hp-deal-marquee__item"><span class="hp-deal-marquee__tag">Win an iPhone 17</span>Order a bundle, 14&#8209;30&nbsp;Nov<span class="hp-deal-marquee__sep"></span></span>
+          <span class="hp-deal-marquee__item"><span class="hp-deal-marquee__tag">Win an iPhone 17</span>Order a bundle, 14&#8209;30&nbsp;Nov<span class="hp-deal-marquee__sep"></span></span>
+          <span class="hp-deal-marquee__item"><span class="hp-deal-marquee__tag">Win an iPhone 17</span>Order a bundle, 14&#8209;30&nbsp;Nov<span class="hp-deal-marquee__sep"></span></span>
         </div>
         <div class="hp-deal-marquee__group">
-          <span class="hp-deal-marquee__item"><span class="hp-deal-marquee__tag">Festive Deal</span>Buy 6 Trial Pack @ 499<span class="hp-deal-marquee__diya"><svg viewBox="0 0 14 7"><path d="M0 0.5h14c0 3.6-3.1 6.5-7 6.5S0 4.1 0 0.5z" fill="#e0743a"/><path d="M2 0.5h10" stroke="#f5b94a" stroke-width="1"/></svg><i></i></span></span>
-          <span class="hp-deal-marquee__item"><span class="hp-deal-marquee__tag">Festive Deal</span>Buy 6 Trial Pack @ 499<span class="hp-deal-marquee__diya"><svg viewBox="0 0 14 7"><path d="M0 0.5h14c0 3.6-3.1 6.5-7 6.5S0 4.1 0 0.5z" fill="#e0743a"/><path d="M2 0.5h10" stroke="#f5b94a" stroke-width="1"/></svg><i></i></span></span>
-          <span class="hp-deal-marquee__item"><span class="hp-deal-marquee__tag">Festive Deal</span>Buy 6 Trial Pack @ 499<span class="hp-deal-marquee__diya"><svg viewBox="0 0 14 7"><path d="M0 0.5h14c0 3.6-3.1 6.5-7 6.5S0 4.1 0 0.5z" fill="#e0743a"/><path d="M2 0.5h10" stroke="#f5b94a" stroke-width="1"/></svg><i></i></span></span>
-          <span class="hp-deal-marquee__item"><span class="hp-deal-marquee__tag">Festive Deal</span>Buy 6 Trial Pack @ 499<span class="hp-deal-marquee__diya"><svg viewBox="0 0 14 7"><path d="M0 0.5h14c0 3.6-3.1 6.5-7 6.5S0 4.1 0 0.5z" fill="#e0743a"/><path d="M2 0.5h10" stroke="#f5b94a" stroke-width="1"/></svg><i></i></span></span>
+          <span class="hp-deal-marquee__item"><span class="hp-deal-marquee__tag">Win an iPhone 17</span>Order a bundle, 14&#8209;30&nbsp;Nov<span class="hp-deal-marquee__sep"></span></span>
+          <span class="hp-deal-marquee__item"><span class="hp-deal-marquee__tag">Win an iPhone 17</span>Order a bundle, 14&#8209;30&nbsp;Nov<span class="hp-deal-marquee__sep"></span></span>
+          <span class="hp-deal-marquee__item"><span class="hp-deal-marquee__tag">Win an iPhone 17</span>Order a bundle, 14&#8209;30&nbsp;Nov<span class="hp-deal-marquee__sep"></span></span>
+          <span class="hp-deal-marquee__item"><span class="hp-deal-marquee__tag">Win an iPhone 17</span>Order a bundle, 14&#8209;30&nbsp;Nov<span class="hp-deal-marquee__sep"></span></span>
         </div>
       </div>
     </a>
@@ -3711,198 +3698,96 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
 
 
-            <!-- Festive Cleaning Kit gift box v2 (above FBT) -->
+            <!-- iPhone 17 contest strip (above FBT) -->
             <style>
-              .hp-fk3 { container-type: inline-size; --teal: #006056; --ink: #0a1f1c; --gold: #f5a623; --gold-deep: #c98a12; --cream: #fff8ea; --line: #d4b062; --s: 1.25;
-                margin: 12px 0 6px; font-family: 'Poppins', sans-serif; color: var(--ink); }
-              .hp-fk3__card { position: relative; display: block; color: inherit; overflow: hidden;
-                border: 1.5px solid var(--line); border-radius: 16px; padding: 22px 14px 0;
-                background: radial-gradient(circle at 82% 55%, rgba(245, 166, 35, 0.22), transparent 48%), var(--cream);
-                transition: box-shadow 0.3s ease, border-color 0.3s ease; }
-              .hp-fk3__card:hover { border-color: #b8862b; box-shadow: 0 10px 24px -14px rgba(140, 96, 20, 0.6); }
-              .hp-fk3__link { display: block; text-decoration: none; color: inherit; border-radius: 12px 12px 0 0; }
-              .hp-fk3__link:focus-visible { outline: 2px solid var(--teal); outline-offset: -2px; }
+              /* Light surface like the rest of the PDP, teal as the only accent, real product photos as the visual */
+              .hp-ct { --teal: #006056; --teal-dark: #004a42; --ink: #17211f; --ink-soft: #55625f; --line: #dfe5e3; --surface: #f7faf9;
+                display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 14px;
+                margin: 12px 0 6px; padding: 12px 12px 12px 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface);
+                color: var(--ink); text-decoration: none; font-family: 'Poppins', sans-serif; letter-spacing: -0.01em;
+                transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+              .hp-ct[hidden] { display: none; }
+              .hp-ct:hover { border-color: rgba(0, 96, 86, 0.4); background: #f1f7f5; color: var(--ink); }
+              .hp-ct:visited { color: var(--ink); }
+              .hp-ct:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+              .hp-ct:active { transform: scale(0.99); }
 
-              /* marigold toran along the top edge */
-              .hp-fk3__toran { position: absolute; top: 0; left: 0; right: 0; height: 12px; pointer-events: none;
-                background:
-                  radial-gradient(circle at 9px 4px, #f5a623 4.2px, transparent 4.8px) 0 0 / 36px 12px repeat-x,
-                  radial-gradient(circle at 27px 5px, #e8590c 3.6px, transparent 4.2px) 0 0 / 36px 12px repeat-x,
-                  radial-gradient(ellipse 2.2px 3.6px at 18px 7px, #3f8f4a 98%, transparent) 0 0 / 36px 12px repeat-x,
-                  linear-gradient(#b8862b, #b8862b) 0 3px / 100% 1px no-repeat; }
+              /* three real products, fanned like a bundle; they spread on hover */
+              .hp-ct__fan { position: relative; width: 74px; height: 46px; flex: none; }
+              .hp-ct__fan img { position: absolute; top: 4px; width: 38px; height: 38px; object-fit: cover; border-radius: 10px; background: #e3eeec;
+                border: 2px solid #fff; box-shadow: 0 2px 6px rgba(0, 74, 66, 0.16);
+                transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1); }
+              .hp-ct__fan img:nth-child(1) { left: 0; transform: rotate(-8deg); z-index: 1; }
+              .hp-ct__fan img:nth-child(2) { left: 18px; top: 2px; transform: rotate(0deg); z-index: 3; }
+              .hp-ct__fan img:nth-child(3) { left: 36px; transform: rotate(8deg); z-index: 2; }
+              .hp-ct:hover .hp-ct__fan img:nth-child(1) { transform: translateX(-3px) rotate(-12deg); }
+              .hp-ct:hover .hp-ct__fan img:nth-child(2) { transform: translateY(-2px); }
+              .hp-ct:hover .hp-ct__fan img:nth-child(3) { transform: translateX(3px) rotate(12deg); }
 
-              .hp-fk3__main { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; column-gap: 10px; }
+              .hp-ct__title { display: block; font-size: 16px; font-weight: 700; line-height: 1.3; }
+              .hp-ct__meta { display: block; margin-top: 2px; font-size: 12.5px; line-height: 1.45; color: var(--ink-soft); }
+              .hp-ct__clock { font-weight: 600; color: var(--teal); font-variant-numeric: tabular-nums; white-space: nowrap; }
 
-              .hp-fk3__copy { align-self: center; padding-bottom: 10px; min-width: 0; }
-              .hp-fk3__meta { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-bottom: 8px; }
-              .hp-fk3__eyebrow { font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-deep); line-height: 1; }
-              .hp-fk3__tag { font-size: 9.5px; font-weight: 700; color: #6b4a00; background: #ffe2a8; border-radius: 999px; padding: 3px 7px; line-height: 1.1; white-space: nowrap; }
-              .hp-fk3__title { margin: 0; font-size: 17px; font-weight: 800; line-height: 1.15; letter-spacing: -0.01em; }
-              .hp-fk3__title b { display: block; margin-top: 2px; font-size: 28px; line-height: 1.05; letter-spacing: -0.02em; color: var(--teal); }
-              .hp-fk3__sub { margin: 6px 0 0; font-size: 11.5px; font-weight: 600; color: #6b5a33; line-height: 1.35; }
-              .hp-fk3__sub { color: var(--ink); font-weight: 700; }
+              .hp-ct__go { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; color: var(--teal);
+                transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease; }
+              .hp-ct__go svg { width: 18px; height: 18px; }
+              .hp-ct:hover .hp-ct__go { transform: translateX(3px); background: rgba(0, 96, 86, 0.08); }
 
-              /* gift box: drawn at base size, scaled by --s; the wrap reserves the scaled footprint */
-              .hp-fk3__boxwrap { position: relative; justify-self: end; width: calc(116px * var(--s)); height: calc(112px * var(--s)); }
-              .hp-fk3__box { position: absolute; left: 0; bottom: 0; width: 104px; height: 88px; transform: scale(var(--s)); transform-origin: bottom left; }
-              .hp-fk3__peek { position: absolute; bottom: 18px; width: 42px; height: 42px; border-radius: 10px; overflow: hidden; background: #dbeced;
-                border: 2px solid #ffffff; box-shadow: 0 2px 6px rgba(10, 31, 28, 0.15); transform: translateY(26px) rotate(var(--r)); opacity: 0;
-                transition: transform 0.7s cubic-bezier(.2, .9, .25, 1.15), opacity 0.4s ease; transition-delay: var(--d); }
-              .hp-fk3__peek img { width: 100%; height: 100%; object-fit: cover; display: block; }
-              .hp-fk3__peek:nth-child(1) { left: 0;    --r: -12deg; --d: 0.15s; z-index: 2; }
-              .hp-fk3__peek:nth-child(2) { left: 31px; --r: 0deg;   --d: 0.25s; z-index: 3; bottom: 24px; }
-              .hp-fk3__peek:nth-child(3) { left: 62px; --r: 12deg;  --d: 0.35s; z-index: 2; }
-              .hp-fk3__body { position: absolute; left: 4px; right: 4px; bottom: 0; height: 32px; border-radius: 3px 3px 8px 8px; z-index: 4;
-                background: linear-gradient(90deg, transparent 42%, var(--gold) 42%, var(--gold) 58%, transparent 58%), linear-gradient(160deg, #0a7a6d, var(--teal) 60%, #004a42); }
-              .hp-fk3__lid { position: absolute; left: 0; right: 0; bottom: 28px; height: 12px; border-radius: 4px; z-index: 1; transform-origin: 90% 100%;
-                background: linear-gradient(90deg, transparent 42%, #ffc65a 42%, #ffc65a 58%, transparent 58%), linear-gradient(#0a7a6d, #005b51);
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18); transition: transform 0.6s cubic-bezier(.3, 1.4, .5, 1); }
-              .hp-fk3__bow { position: absolute; left: 50%; top: -11px; width: 30px; height: 13px; margin-left: -15px; }
-              .hp-fk3__bow::before, .hp-fk3__bow::after { content: ""; position: absolute; top: 0; width: 15px; height: 12px; border: 3px solid #ffc65a; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; box-sizing: border-box; }
-              .hp-fk3__bow::before { left: 0; transform: rotate(-18deg); }
-              .hp-fk3__bow::after { right: 0; transform: rotate(18deg); }
-              .hp-fk3.is-in .hp-fk3__peek { transform: translateY(0) rotate(var(--r)); opacity: 1; }
-              .hp-fk3.is-in .hp-fk3__lid { transform: translate(10px, -42px) rotate(14deg); }
-
-              .hp-fk3__foot { display: flex; align-items: center; margin: 0 -14px; padding: 10px 12px;
-                border-top: 1px dashed var(--line); background: rgba(255, 226, 168, 0.45); }
-
-              .hp-fk3__atc { position: relative; flex: 1 1 auto; width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 40px; padding: 0 16px;
-                border: 0; border-radius: 999px; overflow: hidden; cursor: pointer; font: 700 13px/1 'Poppins', sans-serif; color: #fff; white-space: nowrap;
-                background: linear-gradient(160deg, #0a7a6d, var(--teal) 55%, #004a42); box-shadow: inset 0 0 0 1.5px #ffc65a, 0 6px 14px -6px rgba(0, 74, 66, 0.7);
-                transition: transform 0.2s ease, box-shadow 0.2s ease; }
-              .hp-fk3__atc::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 35%, rgba(255, 214, 128, 0.55) 50%, transparent 65%);
-                background-size: 250% 100%; animation: hpFk3Shine 2.6s linear infinite; pointer-events: none; }
-              .hp-fk3__atc svg { width: 15px; height: 15px; flex: none; }
-              .hp-fk3__atc:hover { transform: translateY(-1px); box-shadow: inset 0 0 0 1.5px #ffc65a, 0 10px 18px -8px rgba(0, 74, 66, 0.8); }
-              .hp-fk3__atc:active { transform: scale(0.97); }
-              .hp-fk3__atc:focus-visible { outline: 2px solid var(--gold-deep); outline-offset: 2px; }
-              .hp-fk3__atc[disabled] { cursor: progress; }
-              .hp-fk3__atc.is-added { background: linear-gradient(160deg, #f5a623, #c98a12); color: var(--ink); box-shadow: inset 0 0 0 1.5px #fff3d6; }
-              .hp-fk3__atc.is-added::after { animation: none; }
-              @keyframes hpFk3Shine { from { background-position: 150% 0; } to { background-position: -100% 0; } }
-
-              @container (max-width: 330px) {
-                .hp-fk3__boxwrap { --s: 1.1; }
-                .hp-fk3__title { font-size: 15.5px; }
-                .hp-fk3__title b { font-size: 25px; }
-              }
-              @container (min-width: 480px) {
-                .hp-fk3__card { padding: 26px 22px 0; }
-                .hp-fk3__main { column-gap: 24px; }
-                .hp-fk3__boxwrap { --s: 1.55; margin-right: 6px; }
-                .hp-fk3__copy { padding-bottom: 14px; }
-                .hp-fk3__meta { flex-direction: row; align-items: center; gap: 8px; margin-bottom: 10px; }
-                .hp-fk3__eyebrow { font-size: 11px; }
-                .hp-fk3__tag { font-size: 10px; padding: 3px 8px; }
-                .hp-fk3__title { font-size: 21px; }
-                .hp-fk3__title b { font-size: 34px; }
-                .hp-fk3__sub { font-size: 13px; margin-top: 8px; }
-                .hp-fk3__foot { margin: 0 -22px; padding: 12px 18px; }
-                .hp-fk3__atc { min-height: 46px; padding: 0 22px; font-size: 14.5px; }
-              }
+              @media (min-width: 750px) { .hp-ct { padding: 14px 16px; gap: 16px; } .hp-ct__title { font-size: 17px; } }
               @media (prefers-reduced-motion: reduce) {
-                .hp-fk3__peek, .hp-fk3__lid, .hp-fk3__card, .hp-fk3__atc { transition: none; }
-                .hp-fk3__atc::after { animation: none; }
+                .hp-ct, .hp-ct__fan img, .hp-ct__go { transition: none; }
+                .hp-ct:active { transform: none; }
               }
             </style>
 
-            <div class="hp-fk3" data-hp-festive-kit-v2>
-              <div class="hp-fk3__card">
-                <span class="hp-fk3__toran" aria-hidden="true"></span>
-
-                <!-- TODO: replace href with the live Festive Cleaning Kit product URL -->
-                <a class="hp-fk3__link" href="/products/festive-starter-kit" data-hp-fk3-link aria-label="Festive special: Festive Cleaning Kit, 6 products at ₹499. View product">
-                <div class="hp-fk3__main">
-                  <div class="hp-fk3__copy">
-                    <div class="hp-fk3__meta">
-                      <span class="hp-fk3__eyebrow">Festive special</span>
-                      <span class="hp-fk3__tag">Limited time</span>
-                    </div>
-                    <p class="hp-fk3__title">Get 6 products <b>at ₹499</b></p>
-                    <p class="hp-fk3__sub">Festive Cleaning Kit</p>
-                  </div>
-
-                  <div class="hp-fk3__boxwrap" aria-hidden="true">
-                    <div class="hp-fk3__box">
-                      <!-- TODO: swap for products actually in the kit -->
-                      <span class="hp-fk3__peek"><img src="./assets/KitchenCleanerWebsiteImages-01.jpg" alt="" loading="lazy"></span>
-                      <span class="hp-fk3__peek"><img src="./assets/WebsiteImagesLimeScale-01_7dde5639-eabb-439c-a335-dd2493db5827(5).jpg" alt="" loading="lazy"></span>
-                      <span class="hp-fk3__peek"><img src="./assets/Website_Images_Metal_Cleaner-01(1).jpg" alt="" loading="lazy"></span>
-                      <span class="hp-fk3__lid"><span class="hp-fk3__bow"></span></span>
-                      <span class="hp-fk3__body"></span>
-                    </div>
-                  </div>
-                </div>
-                </a>
-
-                <div class="hp-fk3__foot">
-                  <!-- TODO: set data-variant-id to the live Festive Cleaning Kit variant ID -->
-                  <button type="button" class="hp-fk3__atc" data-hp-fk3-atc data-variant-id="">
-                    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M2.5 3h2l1.6 9.2a1.5 1.5 0 0 0 1.5 1.3h6.9a1.5 1.5 0 0 0 1.5-1.2L17 6.5H5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="16.8" r="1.2" fill="currentColor"/><circle cx="14.5" cy="16.8" r="1.2" fill="currentColor"/></svg>
-                    <span>Add to Cart</span>
-                  </button>
-                </div>
-              </div>
-            </div>
+            <!-- Only orders from the contest bundle page count. Dates from its banner: 14-30 Nov 2026 (IST). Preview a state with ?contest=pre or ?contest=live -->
+            <a class="hp-ct" href="/pages/byob?view=contest-bundle" data-hp-contest data-start="2026-11-14T00:00:00+05:30" data-end="2026-11-30T23:59:59+05:30"
+               aria-label="iPhone 17 contest: bundle orders could win an iPhone 17. Build your bundle">
+              <span class="hp-ct__fan" aria-hidden="true">
+                <img src="./assets/KitchenCleanerWebsiteImages-01.jpg" alt="" width="38" height="38" loading="lazy">
+                <img src="./assets/WebsiteImagesLimeScale-01_7dde5639-eabb-439c-a335-dd2493db5827(5).jpg" alt="" width="38" height="38" loading="lazy">
+                <img src="./assets/Website_Images_Metal_Cleaner-01(1).jpg" alt="" width="38" height="38" loading="lazy">
+              </span>
+              <span>
+                <span class="hp-ct__title">Win an iPhone 17</span>
+                <span class="hp-ct__meta"><span class="hp-ct__clock" data-hp-ct-clock>7 days to go</span>. Bundle orders only, T&amp;C&nbsp;apply</span>
+              </span>
+              <span class="hp-ct__go" aria-hidden="true">
+                <!-- Phosphor CaretRight (regular) -->
+                <svg viewBox="0 0 256 256" fill="currentColor"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></svg>
+              </span>
+            </a>
             <script>
               (function () {
-                var root = document.querySelector('[data-hp-festive-kit-v2]');
+                var root = document.querySelector('[data-hp-contest]');
                 if (!root) return;
-                if ('IntersectionObserver' in window) {
-                  var io = new IntersectionObserver(function (entries) {
-                    if (entries[0].isIntersecting) { root.classList.add('is-in'); io.disconnect(); }
-                  }, { threshold: 0.5 });
-                  io.observe(root);
-                } else {
-                  root.classList.add('is-in');
+                var start = Date.parse(root.dataset.start), end = Date.parse(root.dataset.end);
+                var force = (location.search.match(/[?&]contest=(pre|live)/) || [])[1];
+                var clock = root.querySelector('[data-hp-ct-clock]');
+                var state, timer;
+                function phase(now) { return force || (now < start ? 'pre' : now <= end ? 'live' : 'over'); }
+                function tick() {
+                  var now = Date.now(), p = phase(now);
+                  if (p === 'over') { root.hidden = true; clearInterval(timer); return; }
+                  state = p;
+                  var target = p === 'pre' ? start : end;
+                  if (force && target < now) target = now + 9 * 864e5 + 5 * 36e5; // forced preview of a state whose date has passed
+                  var s = Math.max(0, (target - now) / 1000), n, u;
+                  if (s >= 86400) { n = Math.floor(s / 86400); u = 'day'; }
+                  else if (s >= 3600) { n = Math.floor(s / 3600); u = 'hr'; }
+                  else { n = Math.max(1, Math.ceil(s / 60)); u = 'min'; }
+                  var phrase = n + ' ' + u + (n === 1 ? '' : 's') + (p === 'pre' ? ' to go' : ' left');
+                  clock.textContent = phrase;
+                  root.setAttribute('aria-label', 'iPhone 17 contest: bundle orders could win an iPhone 17. ' +
+                    (p === 'pre' ? 'Opens' : 'Closes') + ' in ' + phrase.replace(/ (to go|left)$/, '') + '. Build your bundle');
                 }
-                function track(event) {
-                  try {
-                    window.dataLayer = window.dataLayer || [];
-                    window.dataLayer.push({ event: event, variant: 'v2_giftbox', source: 'pdp_tap_cleaner_above_fbt' });
-                  } catch (e) {}
-                }
-                root.querySelector('[data-hp-fk3-link]').addEventListener('click', function () { track('festive_kit_click'); });
-
-                // add to cart
-                var atc = root.querySelector('[data-hp-fk3-atc]');
-                var atcLabel = atc.querySelector('span');
-                function setAdded() {
-                  atc.classList.add('is-added');
-                  atcLabel.textContent = 'Added to Cart';
-                  setTimeout(function () { atc.classList.remove('is-added'); atcLabel.textContent = 'Add to Cart'; }, 2400);
-                }
-                function bumpPreviewCount() {
-                  document.querySelectorAll('.header__cart-count').forEach(function (n) { n.textContent = (parseInt(n.textContent, 10) || 0) + 1; });
-                }
-                function openDrawer() {
-                  if (typeof window.handleFloCartBtn === 'function') { window.handleFloCartBtn(); return; }
-                  if (window.MinimogTheme && window.MinimogTheme.Cart && typeof window.MinimogTheme.Cart.openCartDrawer === 'function') window.MinimogTheme.Cart.openCartDrawer();
-                }
-                atc.addEventListener('click', function () {
-                  track('festive_kit_add_to_cart');
-                  var id = parseInt(atc.dataset.variantId || '0', 10);
-                  if (!id) { bumpPreviewCount(); setAdded(); return; } // preview: no live kit variant yet
-                  atc.disabled = true;
-                  atcLabel.textContent = 'Adding...';
-                  fetch('/cart/add.js', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
-                    body: JSON.stringify({ items: [{ id: id, quantity: 1 }] })
-                  })
-                    .then(function (res) { if (!res.ok) throw new Error('add failed'); return res.json(); })
-                    .then(function () { setAdded(); openDrawer(); })
-                    .catch(function (err) {
-                      console.error('[hp-fk3] cart add failed', err);
-                      atcLabel.textContent = 'Try again';
-                      setTimeout(function () { atcLabel.textContent = 'Add to Cart'; }, 2000);
-                    })
-                    .finally(function () { atc.disabled = false; });
+                tick(); timer = setInterval(tick, 30000);
+                root.addEventListener('click', function () {
+                  try { (window.dataLayer = window.dataLayer || []).push({ event: 'contest_strip_click', state: state, source: 'pdp_tap_cleaner_above_fbt' }); } catch (e) {}
                 });
               })();
             </script>
-            <!-- /Festive Cleaning Kit gift box v2 -->
+            <!-- /iPhone 17 contest strip -->
 
             <div class="prod__kc-fbt" data-kc-fbt="" data-offer2-total="37900" data-offer3-total="54900" data-cart-redirect="1" data-kc-fbt-inited="1">
               <div class="kc-fbt__header">
@@ -6053,14 +5938,13 @@ Each product comes in a bottle which is made from 100% recycled plastic that's n
 </div><div id="shopify-section-template--23156897415404__floating_atc" class="shopify-section"><div id="floating-atc-root" class="floating-atc-root" data-query-param="atc_version" data-default-version="pack_selector" data-product-id="8701643260140" data-product-name="Tap Cleaner &amp; Limescale Remover" data-currency="INR"><div class="floating-atc-variant floating-atc floating-atc--pack-selector pack_selector is-visible" data-atc-variant="pack_selector" data-id="floating-atc"><div class="sticky-atc-bar__banner">
         <div class="sticky-atc-bar__banner-slider" data-autoplay="true" data-interval="3.5">
           <style>
-            .sticky-atc-bar__hot-deal--festive { background: linear-gradient(160deg, #ffc65a, #f5a623 55%, #c98a12); color: #0a1f1c; }
-            .sticky-atc-bar__banner-text--festive.active .sticky-atc-bar__deal-copy { animation: stickyDealBlink 0.8s ease 0.6s 2; }
+            .sticky-atc-bar__hot-deal--contest { background: #f5b94a; color: #0a1f1c; }
+            .sticky-atc-bar__banner-text--deal.active .sticky-atc-bar__deal-copy { animation: stickyDealBlink 0.8s ease 0.6s 2; }
             @keyframes stickyDealBlink { 50% { opacity: 0.3; } }
-            @media (prefers-reduced-motion: reduce) { .sticky-atc-bar__banner-text--festive.active .sticky-atc-bar__deal-copy { animation: none; } }
+            @media (prefers-reduced-motion: reduce) { .sticky-atc-bar__banner-text--deal.active .sticky-atc-bar__deal-copy { animation: none; } }
           </style>
-          <p class="sticky-atc-bar__banner-text sticky-atc-bar__banner-text--festive active" data-index="0"><a href="https://www.happi-planet.com/pages/byob"><span class="sticky-atc-bar__hot-deal">Hot Deal</span><span class="sticky-atc-bar__deal-copy">Buy 3 @ 549</span></a></p>
-          <!-- TODO: point to the live Buy 6 Trial Pack product URL -->
-          <p class="sticky-atc-bar__banner-text sticky-atc-bar__banner-text--festive" data-index="1"><a href="/products/festive-starter-kit"><span class="sticky-atc-bar__hot-deal sticky-atc-bar__hot-deal--festive">Festive Deal</span><span class="sticky-atc-bar__deal-copy">Buy 6 Trial Pack @ 499</span></a></p>
+          <p class="sticky-atc-bar__banner-text sticky-atc-bar__banner-text--deal active" data-index="0"><a href="https://www.happi-planet.com/pages/byob"><span class="sticky-atc-bar__hot-deal">Hot Deal</span><span class="sticky-atc-bar__deal-copy">Buy 3 @ 549</span></a></p>
+          <p class="sticky-atc-bar__banner-text sticky-atc-bar__banner-text--deal" data-index="1"><a href="/pages/byob?view=contest-bundle"><span class="sticky-atc-bar__hot-deal sticky-atc-bar__hot-deal--contest">iPhone 17</span><span class="sticky-atc-bar__deal-copy">Win it with a bundle</span></a></p>
         </div>
       </div><div class="floating-atc__content">
       <input type="hidden" value="45943964860652" id="floating-variant-id">
